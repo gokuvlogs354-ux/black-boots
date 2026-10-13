@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="The Black Boots — a VRFS competitive team.">
+  <title>The Black Boots | VRFS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" data-page="home">
+      <span class="brand-mark">BB</span>
+      <span>THE BLACK BOOTS<small>VRFS COMPETITIVE TEAM</small></span>
+    </a>
+    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav id="navigation">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="roster">Roster</button>
+      <button class="nav-link" data-page="tryouts">Tryouts</button>
+      <button class="nav-link" data-page="news">News &amp; Results</button>
+      <button class="nav-link" data-page="login">Player Login</button>
+    </nav>
+    <a class="discord-small" href="https://discord.gg/PZQM7QxwW" target="_blank" rel="noopener noreferrer">JOIN DISCORD ↗</a>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">VRFS COMPETITIVE ORGANIZATION</span>
+          <h1>BUILT TO<br><span>RISE.</span></h1>
+          <p>One team. One goal. One legacy.</p>
+          <p class="muted">We're building a competitive VRFS community. Be part of the journey from the beginning.</p>
+          <div class="actions">
+            <button class="btn primary" data-page="tryouts">APPLY FOR TRYOUTS</button>
+            <a class="btn secondary" href="https://discord.gg/PZQM7QxwW" target="_blank" rel="noopener noreferrer">JOIN OUR DISCORD</a>
+          </div>
+        </div>
+        <div class="hero-badge"><div class="big-bb">BB</div><p>THE BLACK BOOTS</p><span>EST. 2026</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="memberCount">0</strong><span>MEMBERS</span></div>
+        <div class="stat"><strong id="playerCount">0</strong><span>ROSTER PLAYERS</span></div>
+        <div class="stat"><strong id="winCount">0</strong><span>WINS RECORDED</span></div>
+        <div class="stat"><strong>100</strong><span>MEMBER GOAL</span></div>
+      </div>
+      <div class="section-heading"><span class="eyebrow">OUR MISSION</span><h2>MORE THAN A TEAM.</h2><p>We're here to build a strong community, improve together, compete fairly, and work toward playing in a future VRFS league.</p></div>
+      <div class="feature-grid">
+        <article class="panel"><span class="feature-number">01</span><h3>COMPETE</h3><p>Practice, develop your skills, and prepare for competitive matches.</p></article>
+        <article class="panel"><span class="feature-number">02</span><h3>CONNECT</h3><p>Meet teammates and help us build an active community.</p></article>
+        <article class="panel"><span class="feature-number">03</span><h3>RISE</h3><p>Work toward our goal of 100 members and a future league appearance.</p></article>
+      </div>
+      <div class="cta"><h2>READY TO WEAR BLACK?</h2><p>Your journey with The Black Boots starts here.</p><button class="btn primary" data-page="tryouts">JOIN THE TEAM</button></div>
+    </section>
+
+    <section id="roster" class="page">
+      <div class="page-heading"><span class="eyebrow">MEET THE SQUAD</span><h1>TEAM ROSTER</h1><p>The players representing The Black Boots.</p></div>
+      <div id="rosterGrid" class="roster-grid"></div>
+    </section>
+
+    <section id="tryouts" class="page">
+      <div class="page-heading"><span class="eyebrow">YOUR OPPORTUNITY</span><h1>TRYOUT APPLICATION</h1><p>Think you've got what it takes? Tell us about yourself.</p></div>
+      <form id="tryoutForm" class="form-card">
+        <label for="tryName">Player name / VRFS username</label><input id="tryName" name="playerName" maxlength="40" required placeholder="Your in-game name">
+        <label for="tryPosition">Preferred position</label>
+        <select id="tryPosition" name="position" required><option value="">Choose a position</option><option>Goalkeeper</option><option>Defender</option><option>Midfielder</option><option>Forward</option><option>Flexible / Any position</option></select>
+        <label for="tryExperience">Experience and skill level</label>
+        <select id="tryExperience" name="experience" required><option value="">Choose one</option><option>Beginner — ready to learn</option><option>Intermediate — regular player</option><option>Advanced — competitive player</option></select>
+        <label for="tryDiscord">Discord username</label><input id="tryDiscord" name="discord" maxlength="60" required placeholder="Your Discord username">
+        <label for="tryReason">Why do you want to join?</label><textarea id="tryReason" name="reason" maxlength="500" rows="4" required placeholder="Tell us about yourself..."></textarea>
+        <button class="btn primary full" type="submit">SUBMIT APPLICATION</button>
+        <p class="form-note">Demo mode: applications are stored only in this browser. They are not sent to the team or Discord.</p><p id="tryMessage" class="message" aria-live="polite"></p>
+      </form>
+      <div class="requirements panel"><h2>PLAYER REQUIREMENTS</h2><ul><li>Own and be able to play VRFS.</li><li>Stay active and communicate with the team.</li><li>Respect teammates, opponents, and staff.</li><li>Be willing to practice and improve.</li><li>Follow team rules. No cheating or toxicity.</li></ul></div>
+    </section>
+
+    <section id="news" class="page">
+      <div class="page-heading"><span class="eyebrow">THE LATEST</span><h1>NEWS &amp; RESULTS</h1><p>Team announcements, match scores, and achievements.</p></div>
+      <div id="newsGrid" class="news-grid"></div>
+    </section>
+
+    <section id="login" class="page">
+      <div class="page-heading"><span class="eyebrow">TEAM ACCESS</span><h1>PLAYER LOGIN</h1><p>Sign in to view the demo member area.</p></div>
+      <form id="loginForm" class="form-card">
+        <label for="loginName">Username</label><input id="loginName" required maxlength="40" autocomplete="username" placeholder="Enter username">
+        <label for="loginPassword">Demo password</label><input id="loginPassword" required type="password" autocomplete="current-password" placeholder="Enter demo password">
+        <button class="btn primary full" type="submit">SIGN IN</button><p class="form-note">Front-end demonstration only. No real accounts exist.</p><p id="loginMessage" class="message" aria-live="polite"></p>
+      </form>
+      <div id="memberArea" class="panel hidden"><h2>WELCOME, <span id="welcomeName"></span></h2><p>You're viewing the local demo member area.</p><button id="logoutBtn" class="btn secondary">LOG OUT</button></div>
+      <div class="panel admin-intro"><h2>TEAM STAFF?</h2><p>Open the demo admin dashboard to manage roster entries, news posts, and match results on this device.</p><button id="adminOpenBtn" class="btn secondary">OPEN DEMO ADMIN</button><p class="form-note">Demo controls are not protected against tampering.</p></div>
+      <section id="adminPanel" class="admin-panel hidden">
+        <div class="admin-title"><div><span class="eyebrow">LOCAL DEMO TOOLS</span><h2>ADMIN DASHBOARD</h2></div><button id="adminCloseBtn" class="btn secondary">CLOSE</button></div>
+        <div class="panel"><h3>UPDATE MEMBER COUNT</h3><form id="memberForm" class="inline-form"><input id="memberInput" type="number" min="0" max="100000" required placeholder="Total community members"><button class="btn primary" type="submit">SAVE</button></form></div>
+        <div class="panel"><h3>ADD A ROSTER PLAYER</h3><form id="rosterForm" class="stack-form"><input id="rosterName" required maxlength="40" placeholder="Player name"><select id="rosterPosition" required><option value="">Select position</option><option>Goalkeeper</option><option>Defender</option><option>Midfielder</option><option>Forward</option><option>Captain</option><option>Manager</option></select><button class="btn primary" type="submit">ADD PLAYER</button></form><div id="adminRoster" class="admin-list"></div></div>
+        <div class="panel"><h3>PUBLISH NEWS OR MATCH RESULTS</h3><form id="newsForm" class="stack-form"><input id="newsTitle" required maxlength="100" placeholder="Post title"><select id="newsType"><option>Announcement</option><option>Match Result</option><option>Achievement</option></select><input id="newsScore" maxlength="30" placeholder="Score (optional), e.g. 3-1"><textarea id="newsBody" rows="3" maxlength="1000" required placeholder="Write your post..."></textarea><button class="btn primary" type="submit">PUBLISH POST</button></form><div id="adminNews" class="admin-list"></div></div>
+        <div class="panel"><h3>TRYOUT APPLICATIONS</h3><p class="form-note">Applications in this demo are only on this device.</p><div id="adminApplications" class="admin-list"></div></div>
+        <button id="resetDemo" class="btn danger">RESET ALL DEMO DATA</button>
+      </section>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#home" data-page="home"><span class="brand-mark">BB</span><span>THE BLACK BOOTS<small>BUILT TO RISE.</small></span></a><p>Fan-made team website. Not an official VRFS website.</p><a href="https://discord.gg/PZQM7QxwW" target="_blank" rel="noopener noreferrer">JOIN OUR DISCORD ↗</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
